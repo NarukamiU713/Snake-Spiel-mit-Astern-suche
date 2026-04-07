@@ -1,3 +1,0 @@
-D:/Codes/snake/build/debug/CMakeFiles/snake.dir
-D:/Codes/snake/build/debug/CMakeFiles/edit_cache.dir
-D:/Codes/snake/build/debug/CMakeFiles/rebuild_cache.dir

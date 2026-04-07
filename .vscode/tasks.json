@@ -1,31 +1,41 @@
 {
-     "version": "2.0.0",
-     "tasks": [
-          {
-               "type": "cppbuild",
-               "label": "Build Snake",
-               "command": "D:\\mingw64\\bin\\g++.exe",
-               "args": [
-                    "-fdiagnostics-color=always",
-                    "-g",
-                    "main.cpp",
-                    "Food.cpp",
-                    "GameSetting.cpp",
-                    "Snake.cpp",
-                    "-o",
-                    "snake.exe"
-               ],
-               "options": {
-                    "cwd": "D:\\Codes\\Snake"
-               },
-               "problemMatcher": [
-                    "$gcc"
-               ],
-               "group": {
-                    "kind": "build",
-                    "isDefault": true
-               },
-               "detail": "Build the Snake project."
-          }
-     ]
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Configure Snake",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "--fresh",
+                "--preset",
+                "debug"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            }
+        },
+        {
+            "label": "Build Snake",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "--build",
+                "--preset",
+                "debug"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "dependsOn": [
+                "Configure Snake"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        }
+    ]
 }
